@@ -1,0 +1,137 @@
+# conky configuration
+
+# set to yes if you want Conky to be forked in the background
+background yes
+
+# X font when Xft is disabled, you can pick one with program xfontsel
+#font 5x7
+#font 6x10
+#font 7x13
+#font 8x13
+#font 9x15
+#font *mintsmild.se*
+#font -*-*-*-*-*-*-34-*-*-*-*-*-*-*
+
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+#xftfont Bitstream Vera Sans Mono:size=8
+xftfont Sans:size=8
+
+# Text alpha when using Xft
+xftalpha 0.2
+
+# Print everything to console?
+# out_to_console no
+
+# mail spool
+#mail_spool $MAIL
+
+# Update interval in seconds
+update_interval 1.0
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+#own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 30 5
+
+# Draw shades?
+draw_shades yes
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders no
+
+# Stippled borders?
+stippled_borders 3
+
+# border margins
+border_inner_margin 0
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+
+# Text alignment, other possible values are commented
+#alignment top_left
+#alignment top_right
+alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 5
+gap_y 5
+
+#Maximum width of the window
+maximum_width 185
+
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2 
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+#use_spacer left
+#Note: doesn't work in conky 1.2 =(
+
+#colors
+color1 ffffff	#white
+color2 9a9a9a
+color3 46bcdf 
+color4 075573   #8f0b0a
+color5 3fddef
+
+# stuff after 'TEXT' will be formatted on screen
+TEXT
+${nodename}${hr}
+${cpugraph cpu1 20,84 46bcdf 075573} $alignr${cpugraph cpu2 20,84 46bcdf 075573}
+${color3}CPU1: ${color4}${cpu cpu1}% $alignr${color3}CPU2: ${color4}${cpu cpu2}% 
+${color3}CPU-Freq: $alignr${color4}${freq} MHz
+${color3}CPU-Temp: $alignr${color4}${acpitemp}°C
+${color3}Load: $alignr${color4}$loadavg 
+${color3}Processes: $alignr${color4}${running_processes} /${processes}
+${diskiograph_read /dev/sda 20,84 46bcdf 075573} $alignr${diskiograph_write /dev/sda 20,84 46bcdf 075573}
+${color3}read: ${color4}${diskio_read} ${alignr}${color3}write: ${color4}${diskio_write}
+
+${color3}Entropy: $alignr${color4}${entropy_avail}/${entropy_poolsize}
+${color5}$alignc ${entropy_bar 3,180}
+${color3}RAM:  $alignr${color4}${mem}/${memmax}
+${color5}$alignc ${membar 3,180}
+${color3}Root-FS:    $alignr${color4}${fs_free /}/${fs_size /}
+${color5}$alignc ${fs_bar 3,180 /}
