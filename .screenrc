@@ -13,5 +13,5 @@ hardstatus alwayslastline '%{= B}[ %{= W}%H%{= B} ] %= %{= w}%?%-Lw%?%{B}( %{W}%
 
 screen -t "admin"   0 su -
 screen -t "htop"    1 htop
-screen -t "log"     2 tailf /var/log/messages.log
+screen -t "log"     2 tail -F /var/log/messages.log
 screen -t "term"    3 
