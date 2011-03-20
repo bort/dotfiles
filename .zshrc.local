@@ -1,0 +1,2 @@
+alias conf="GIT_DIR=~/.configs.git git"
+alias confk="GIT_DIR=~/.configs.git gitk"
