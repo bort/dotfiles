@@ -1,2 +1,12 @@
+alias g="git"
+alias gk="gitk&"
+alias gg="git gui&"
+
 alias conf="GIT_DIR=~/.configs.git git"
 alias confk="GIT_DIR=~/.configs.git gitk"
+
+alias vik="vim -c VimwikiIndex"
+
+alias py="ipython"
+
+bindkey -v
