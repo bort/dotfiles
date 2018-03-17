@@ -1,3 +1,5 @@
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
 alias g="git"
 alias gk="gitk&"
 alias gg="git gui&"
