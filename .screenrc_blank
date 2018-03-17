@@ -1,0 +1,21 @@
+nethack on
+vbell on
+startup_message off
+msgwait 2
+defscrollback 50000
+defutf8 on
+shell zsh
+shelltitle "$ |term"
+term screen-256color
+
+bind ^Z
+
+caption always "%{= y}"
+hardstatus alwayslastline '%{= B}[ %{= W}%H%{= B} ] %= %{= w}%?%-Lw%?%{B}( %{W}%n*%f%t%?(%u)%?%{B} )%{w}%?%+Lw%?%?%= %{B}[ %{= W}%c%{= B} ]'
+
+screen -t "term"    0
+screen -t "term"    1
+screen -t "term"    2
+screen -t "term"    3
+screen -t "term"    4
+
