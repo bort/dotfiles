@@ -21,6 +21,7 @@ let g:tex_flavor = "latex"
 
 " folding
 set foldmethod=syntax
+set nofoldenable
 
 " show relative line numbers
 set relativenumber
